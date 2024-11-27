@@ -1,4 +1,4 @@
-const backendDomin = "https://laravel-server-electronics-website.onrender.com/"
+const backendDomin = "https://laravel-server-electronics-website.onrender.com"
 
 const SummaryApi = {
   signUP: {

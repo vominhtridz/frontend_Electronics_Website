@@ -27,26 +27,26 @@ const ProductFilterPage = () => {
   )
   const [category, setCategory] = useState("");
 
-  const [categories, setCategories] = useState<CategoryType[]>([])
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(100000000);
+  const [categories, setcategories] = useState<CategoryType[]>([])
+  const [minPrice, setMinPrice] = useState(0)
+  const [maxPrice, setMaxPrice] = useState(100000000)
   // const [rating, setRating] = useState(1);
   const [filteredProducts, setFilteredProducts] = useState<any>(Filter_Product)
-   const fetchCategoryProduct = async () => {
-     try {
-       const response = await axios.get(SummaryApi.categoryProduct.url, {
-         headers: {
-           "Content-Type": "application/json",
-           Accept: "application/json",
-         },
-       })
-       if (response.status === 200) {
-         setCategories(response.data)
-       }
-     } catch (err) {
-       console.error("Lỗi khi tải dữ liệu danh mục:", err)
-     } 
-   }
+  const fetchCategoryProduct = async () => {
+    try {
+      const response = await axios.get(SummaryApi.categoryProduct.url, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+      if (response.status === 200) {
+        setcategories(response.data)
+      }
+    } catch (err) {
+      console.error("Lỗi khi tải dữ liệu danh mục:", err)
+    }
+  }
 
   
   // Hàm lọc sản phẩm dựa trên từ khóa và bộ lọc

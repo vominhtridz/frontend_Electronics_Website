@@ -34,7 +34,7 @@ const CategoryList = () => {
   }, [])
 
   // Component hiển thị loading skeleton
-  const LoadingCategories = () =>
+  const Loadingcategories = () =>
     loadingList.map((_, index) => (
       <div
         className='w-20 h-20 md:w-24 md:h-24 bg-gray-200 rounded-full animate-pulse flex items-center justify-center'
@@ -43,7 +43,7 @@ const CategoryList = () => {
     ))
 
   // Component hiển thị danh mục sản phẩm
-  const getCategories = () =>
+  const getcategories = () =>
     categoryProduct.map(product => (
       <Link
         to={`/search?category=${product.name}`}
@@ -68,7 +68,7 @@ const CategoryList = () => {
       <h2 className='text-3xl font-semibold py-4'>Danh Mục</h2>
 
       <div className='flex items-center gap-6 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100'>
-        {loading ? LoadingCategories() : getCategories()}
+        {loading ? Loadingcategories() : getcategories()}
       </div>
     </div>
   )
