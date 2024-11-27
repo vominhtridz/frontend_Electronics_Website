@@ -24,7 +24,7 @@ const FormSignup = ({
   const handleSignup = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (data.password === data.password1) {
-      const URLPicture = await uploadImage(image)
+      const URLPicture = image ? await uploadImage(image) : null
       data.image = URLPicture
       dispatch(setLoading(true))
       try {
@@ -32,10 +32,10 @@ const FormSignup = ({
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
-            credentials: true
+            credentials: true,
           },
         })
-        console.log(response)
+
         if (response.status === 201) {
           toast.success(response.data.message || "Đăng kí thành công")
           dispatch(setLoading(false))

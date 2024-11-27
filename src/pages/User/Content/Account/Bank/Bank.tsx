@@ -169,7 +169,6 @@ export const PageBank = () => {
         },
       })
       if (response.status === 201) {
-        console.log(response)
         toast.success(response.data.cuccess)
         fetchUserBank()
         dispatch(setLoading(false))
@@ -257,11 +256,11 @@ export const PageBank = () => {
            Authorization: `Bearer ${token}`,
          },
        })
-       console.log(response)
+
        if (response.status === 200) {
          toast.success(response.data.cuccess)
          fetchUserBank()
-         Cookies.remove('bank_id')
+         Cookies.remove("bank_id")
          dispatch(setLoading(false))
          //clear state
          handleBackBank()

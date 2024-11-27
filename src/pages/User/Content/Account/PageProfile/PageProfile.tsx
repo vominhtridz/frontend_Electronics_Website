@@ -70,8 +70,7 @@ export const PageProfile = () => {
         },
       })
       if (response.status === 200) {
-        console.log(response)
-        dispatch(setLoading(false));
+        dispatch(setLoading(false))
         fetchUserDetails()
         toast.success(response.data.cuccess || "Cập Nhật Thành Công")
       } else {

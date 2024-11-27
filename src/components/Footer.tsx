@@ -12,31 +12,30 @@ import { setLoading } from "../store/PageSlice"
 import { SettingType } from "../typescript/HomeType"
 const Footer: FC = () => {
   const dispatch = useDispatch()
-  const [settings, setSettings] = useState<SettingType| any>(null)
- 
+  const [settings, setSettings] = useState<SettingType | any>(null)
 
-    const fetchSettings = async () => {
-      dispatch(setLoading(true))
+  const fetchSettings = async () => {
+    dispatch(setLoading(true))
 
-      try {
-        const dataResponse = await axios.get(SummaryApi.get_settings.url, {
-          headers: {
-            accept: "application/json",
-          },
-        })
-        if (dataResponse.status === 200) {
-          dispatch(setLoading(false))
-
-          const settings = dataResponse?.data?.data[0]
-          setSettings(settings)
-        }
-      } catch (error) {
+    try {
+      const dataResponse = await axios.get(SummaryApi.get_settings.url, {
+        headers: {
+          accept: "application/json",
+        },
+      })
+      if (dataResponse.status === 200) {
         dispatch(setLoading(false))
 
-        console.error("Error fetching user details:", error)
+        const settings = dataResponse?.data?.data[0]
+        setSettings(settings)
       }
+    } catch (error) {
+      dispatch(setLoading(false))
+
+      console.error("Error fetching user details:", error)
+    }
   }
-  console.log(settings)
+
   useEffect(() => {
     fetchSettings()
   }, [])

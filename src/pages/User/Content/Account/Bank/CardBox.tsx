@@ -70,7 +70,6 @@ const CardBox = ({
     }
     setCodeCvv(value)
   }
-  console.log("CHECK RERENDER CARD BOX")
   const ChangeName = (value: string) => {
     if (!VietnameseRegex.test(value)) {
       setNameErr(true)
