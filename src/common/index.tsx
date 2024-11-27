@@ -1,4 +1,4 @@
-const backendDomin = "http://localhost:8000";
+const backendDomin = "https://laravel-server-electronics-website.onrender.com/"
 
 const SummaryApi = {
   signUP: {
@@ -178,6 +178,5 @@ const SummaryApi = {
     method: "get",
   },
 }
-
 
 export default SummaryApi
