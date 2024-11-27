@@ -29,6 +29,9 @@
     "web-vitals": "^2.1.4",
     "@rollup/rollup-linux-x64-gnu": "false"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "false"
+  },
   "scripts": {
     "start": "vite",
     "dev": "vite",
